@@ -18,17 +18,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-block-size: 368px;
+  padding-block: 120px;
   margin-block: 100px;
   border: 2px solid var(--accent-color);
-  background-color: #fff;
-  padding: 20px;
+  background-color: var(--bg-color);
 }
 
 .header__logo {
   font-family: var(--font-accent);
   font-size: clamp(40px, 8vw, 65px);
-  font-weight: 400;
+  font-weight: var(--main-weight);
   line-height: 1;
   margin: 0;
 }
@@ -36,7 +35,7 @@
 .header__title {
   font-family: var(--font-accent);
   font-size: 23px;
-  font-weight: 400;
+  font-weight: var(--main-weight);
   line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -142,6 +141,10 @@
   border-color: var(--accent-color);
 }
 
+.card__like-button {
+  min-inline-size: 130px;
+}
+
 .button {
   position: relative;
   display: flex;
@@ -161,6 +164,9 @@
 
 .button:focus {
   outline: none;
+}
+
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -191,6 +197,7 @@
 }
 
 .save-button {
+  inline-size: clamp(280px, 100%, 335px);
   margin: 50px auto;
 }
 
@@ -200,7 +207,7 @@
   max-block-size: 100%;
   border: 2px solid var(--accent-color);
   padding: 20px;
-  background-color: var(--button-bg);
+  background-color: var(--bg-color);
   color: var(--accent-color);
 }
 
@@ -208,7 +215,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 20px;
-  inline-size: clamp(320px, 90vw, 400px);
+  inline-size: clamp(320px, 90vw, 353px);
 }
 
 .dialog__icon {
@@ -238,36 +245,35 @@
   background-color: rgb(0 0 0 / 0.75);
 }
 
-.card__image-1 {
+.card__image-start {
   filter: none;
 }
-.card__image-2 {
+.card__image-clean {
   filter: sepia(0.6) contrast(0.9);
 }
-.card__image-3 {
+.card__image-fail {
   filter: saturate(3) hue-rotate(30deg);
 }
-.card__image-4 {
+.card__image-ideal {
   filter: sepia(0.8) saturate(1.5);
 }
-.card__image-5 {
+.card__image-friends {
   filter: hue-rotate(90deg);
 }
-.card__image-6 {
+.card__image-strategy {
   filter: grayscale(1) sepia(0.3);
 }
-.card__image-7 {
+.card__image-hands {
   filter: blur(4px);
 }
-.card__image-8 {
+.card__image-here {
   filter: hue-rotate(150deg) contrast(1.2) saturate(1.5);
 }
 
 @media (width <= 375px) {
   .header {
-    min-block-size: auto;
+    padding-block: 60px;
     margin-block: 50px;
-    padding: 40px 20px;
   }
   .header__title {
     font-size: 14px;
